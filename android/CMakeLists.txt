@@ -5,6 +5,9 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 
+# Force 16KB page alignment (Android 13+ requirement)
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z,max-page-size=16384")
+
 #set(can_use_assembler TRUE)
 #enable_language(ASM)
 
